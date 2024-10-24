@@ -1,0 +1,46 @@
+pgk load control;
+s=tf("s")
+
+'pergunta 1.3'
+Gs=tf([0.0104],[1 0 0])
+bode(Gs)
+
+'pergunta 1.5'
+step(Gs)
+
+'pergunta 2.1'
+Ls=tf([1],[1 0 0])
+rlocusx(Ls)
+
+'pergunta 2.2'
+Ts1=Ls/(1+Ls)
+Ts2=2*Ls/(1+2*Ls)
+Ts3=3*Ls/(1+3*Ls)
+Ts4=4*Ls/(1+4*Ls)
+step(Ts1,Ts2,Ts3,Ts4)
+
+'pergunta 2.3'
+Ls=tf([1],[1 0])
+rlocusx(Ls)
+
+'pergunta 2.4'
+Ts1=Ls/(1+Ls)
+Ts2=2*Ls/(1+2*Ls)
+Ts3=3*Ls/(1+3*Ls)
+Ts4=4*Ls/(1+4*Ls)
+step(Ts1,Ts2,Ts3,Ts4)
+
+'pergunta 2.5'
+Ks=1+1/s+s
+Ls=Ks*Gs
+rlocusx(Gs)
+step(400*Ls/(1+400*Ls))
+Ks=1+0.3/s+s
+Ls=Ks*Gs
+rlocusx(Gs)
+step(400*Ls/(1+400*Ls))
+
+'pergunta 3.3'
+Ks=1+1/s+s
+Ls=Ks*Gs
+
