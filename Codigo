@@ -41,6 +41,5 @@ rlocusx(Gs)
 step(400*Ls/(1+400*Ls))
 
 'pergunta 3.3'
-Ks=1+1/s+s
-Ls=Ks*Gs
-
+bode(Ls,{10^-2,10^2})
+margin(Ls)
